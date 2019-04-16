@@ -108,7 +108,7 @@ int main() {
 	//const int SMC_SIZE = 75000;
 	//const int SMC_UC_GRADS_SIZE = 25000;
 	//Student* uc = readStudentsFromFile("uc_students.txt", UC_SIZE);
-	//Student* smc = readStudentsFromFile("smc_grads.txt", SMC_SIZE);
+	//Student* smc = readStudentsFromFile("sample_smc_grads.txt", SMC_SIZE);
 
 	// Rough timing
 	clock_t start, end;
