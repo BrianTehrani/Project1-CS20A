@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : CS20AProj1.cpp
-// Author      : YOUR NAME HERE
+// Author      : Brian Tehrani
 // Description : CS 20A Programming Project 1
 //============================================================================
 
