@@ -31,5 +31,8 @@
     <Text Include="sample_smc_grads.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="sample_uc_students.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -10,6 +10,10 @@ Student::Student(){ //setting members to arbitrary default values
 	school = "n/a";
 }
 
+Student::~Student() {
+
+}
+
 Student::Student(int id, string name, string school) {
 	
 	this->id = id;

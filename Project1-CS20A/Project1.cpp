@@ -31,6 +31,22 @@ Student* readStudentsFromFile(string filename, int num) {
 	// getline(studentsStream, line); - you might find useful
 	
 	// YOUR CODE HERE
+	int id = 0;
+	string line, name, school;
+	Student* studentArray = new Student[num];
+	
+	for (int i = 0; i < num; i++) {
+
+		getline(studentsStream, line);
+
+		name = line.substr(0, line.find_first_of(","));
+		id = stoi(line.substr(line.find_first_of(",") + 1, line.find_last_of(",") - 1));
+		school = line.substr(line.find_last_of(",") + 1, line.find("\n"));
+		Student temp(id, name, school);
+		studentArray[i] = temp;
+	}
+
+	return studentArray;
 }
 
 /*
@@ -61,6 +77,7 @@ Student* findCommonStudents1(Student group1[], int len1, Student group2[],
 		int len2, int numCommon) {
 	
 	// YOUR CODE HERE
+	return 0;
 }
 
 /*
@@ -86,6 +103,7 @@ Student* findCommonStudents2(Student group1[], int len1, Student group2[],
 
   
   // YOUR CODE HERE	
+	return 0;
 }
 
 
@@ -100,7 +118,7 @@ int main() {
 	const int UC_SIZE = 10;
 	const int SMC_SIZE = 5;
 	const int SMC_UC_GRADS_SIZE = 2;
-	Student* uc = readStudentsFromFile("sample_uc_students.txt", UC_SIZE);
+	//Student* uc = readStudentsFromFile("sample_uc_students.txt", UC_SIZE);
 	Student* smc = readStudentsFromFile("sample_smc_grads.txt", SMC_SIZE);
 
 	/********************************** Use these files for the output you submit *************************/
@@ -108,29 +126,29 @@ int main() {
 	//const int SMC_SIZE = 75000;
 	//const int SMC_UC_GRADS_SIZE = 25000;
 	//Student* uc = readStudentsFromFile("uc_students.txt", UC_SIZE);
-	//Student* smc = readStudentsFromFile("sample_smc_grads.txt", SMC_SIZE);
+	//Student* smc = readStudentsFromFile("smc_grads.txt", SMC_SIZE);
 
 	// Rough timing
-	clock_t start, end;
+	//clock_t start, end;
 
-	time(&start);
+	//time(&start);
+/*
 	Student* common1 = findCommonStudents1(uc, UC_SIZE, smc, SMC_SIZE,
 			SMC_UC_GRADS_SIZE);
-	time(&end);
+	//time(&end);
 	cout << "Using linear search it took " << difftime(end, start) << " seconds."
 			<< endl;
 
-	/*
-	 * library sort function to sort an array: sort(arr, arr+size)
-	 * Note that values must be comparable with the < operator
-	 */
+	 // library sort function to sort an array: sort(arr, arr+size)
+	 // Note that values must be comparable with the < operator
+	 
 	sort(common1, common1 + SMC_UC_GRADS_SIZE);
 	writeStudentsToFile(common1, SMC_UC_GRADS_SIZE, "smc_grads_at_uc_1.txt");
 
-	time(&start);
+	//time(&start);
 	Student* common2 = findCommonStudents2(uc, UC_SIZE, smc, SMC_SIZE,
 			SMC_UC_GRADS_SIZE);
-	time(&end);
+	//time(&end);
 	cout << "Using binary search it took " << difftime(end, start)
 			<< " seconds." << endl;
 
@@ -142,4 +160,5 @@ int main() {
 	delete[] common1;
 	delete[] common2;
 	return 0;
+*/
 }

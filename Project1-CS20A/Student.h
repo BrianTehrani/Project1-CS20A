@@ -1,13 +1,10 @@
+#pragma once
 /*
  * Student.h
  *
  *  Do not change this header file.
  *  Just implement it in Student.cpp
  */
-
-#ifndef STUDENT_H_
-#define STUDENT_H_
-
 #include <string>
 using namespace std;
 
@@ -46,4 +43,3 @@ public:
 	virtual ~Student();
 };
 
-#endif /* STUDENT_H_ */
