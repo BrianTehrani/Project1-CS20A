@@ -19,6 +19,11 @@ Student::Student(int id, string name, string school) {
 	this->id = id;
 	this->name = name;
 	this->school = school;
+}
+
+string Student::toString(){
+
+	return name + "," + to_string(id) + "," + school;
 
 }
 
