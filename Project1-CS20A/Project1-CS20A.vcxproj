@@ -19,10 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\cppFiles\Project1.cpp" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\txtFiles\sample_smc_grads.txt" />
+    <ClCompile Include="Project1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="sample_smc_grads.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
