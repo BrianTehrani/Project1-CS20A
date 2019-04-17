@@ -192,6 +192,7 @@ int main() {
 	delete[] uc;
 	delete[] common1;
 	delete[] common2;
+
 	return 0;
 
 }
