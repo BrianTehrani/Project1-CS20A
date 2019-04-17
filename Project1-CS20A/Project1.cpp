@@ -61,7 +61,7 @@ void writeStudentsToFile(Student students[], int num, string filename) {
 	
 	// YOUR CODE HERE
 	for (int i = 0; i < num; i++) {
-		output << students[i].toString();
+		output << students[i].toString() << endl;
 	}
 	output.close();
 }
@@ -81,7 +81,22 @@ Student* findCommonStudents1(Student group1[], int len1, Student group2[],
 		int len2, int numCommon) {
 	
 	// YOUR CODE HERE
-	return 0;
+
+	Student* ucCommonStudent = new Student[numCommon];
+	int k = 0;
+	for (int i = 0; i < len1; i++) {
+		for (int j = 0; j < len2; j++) {
+			
+			if (group1[i] == group2[j]) {
+				
+				ucCommonStudent[k] = group1[i];
+				k++;
+			}
+				
+		}
+
+	}
+	return ucCommonStudent;
 }
 
 /*
@@ -133,14 +148,14 @@ int main() {
 	//Student* smc = readStudentsFromFile("smc_grads.txt", SMC_SIZE);
 
 	// Rough timing
-	//clock_t start, end;
+	clock_t start, end;
 
-	//time(&start);
-/*
+	start = clock();
+
 	Student* common1 = findCommonStudents1(uc, UC_SIZE, smc, SMC_SIZE,
 			SMC_UC_GRADS_SIZE);
-	//time(&end);
-	cout << "Using linear search it took " << difftime(end, start) << " seconds."
+	end = clock();
+	cout << "Using linear search it took " << difftime(end, start) / CLOCKS_PER_SEC << " seconds."
 			<< endl;
 
 	 // library sort function to sort an array: sort(arr, arr+size)
@@ -148,7 +163,7 @@ int main() {
 	 
 	sort(common1, common1 + SMC_UC_GRADS_SIZE);
 	writeStudentsToFile(common1, SMC_UC_GRADS_SIZE, "smc_grads_at_uc_1.txt");
-
+/*
 	//time(&start);
 	Student* common2 = findCommonStudents2(uc, UC_SIZE, smc, SMC_SIZE,
 			SMC_UC_GRADS_SIZE);
@@ -163,6 +178,6 @@ int main() {
 	delete[] uc;
 	delete[] common1;
 	delete[] common2;
-	return 0;
-*/
+*/	return 0;
+
 }
