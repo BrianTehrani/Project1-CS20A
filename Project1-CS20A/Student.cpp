@@ -27,5 +27,16 @@ string Student::toString(){
 
 }
 
+bool Student::operator ==(const Student& other) const {
+	if (id == other.id)
+		return true;
+	return false;
+}
 
+bool Student::operator<(const Student & other) const
+{
+	if (id < other.id)
+		return true;
+	return false;
+}
 
