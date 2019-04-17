@@ -118,8 +118,8 @@ int main() {
 	const int UC_SIZE = 10;
 	const int SMC_SIZE = 5;
 	const int SMC_UC_GRADS_SIZE = 2;
-	//Student* uc = readStudentsFromFile("sample_uc_students.txt", UC_SIZE);
-	Student* smc = readStudentsFromFile("sample_smc_grads.txt", SMC_SIZE);
+	Student* uc = readStudentsFromFile("sample_uc_students.txt", UC_SIZE);
+	//Student* smc = readStudentsFromFile("sample_smc_grads.txt", SMC_SIZE);
 
 	/********************************** Use these files for the output you submit *************************/
 	//const int UC_SIZE = 350000;
