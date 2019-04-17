@@ -29,6 +29,9 @@
     <Text Include="smc_grads.txt" />
     <Text Include="uc_students.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="TimeStamps.PNG" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{85B2E95D-24DD-4D12-8AA7-F52718180664}</ProjectGuid>

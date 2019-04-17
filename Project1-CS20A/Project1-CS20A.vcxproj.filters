@@ -35,4 +35,9 @@
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="TimeStamps.PNG">
+      <Filter>Source Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
