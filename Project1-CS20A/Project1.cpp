@@ -60,6 +60,10 @@ void writeStudentsToFile(Student students[], int num, string filename) {
 	// can write to output just like you write to cout:  output<<...
 	
 	// YOUR CODE HERE
+	for (int i = 0; i < num; i++) {
+		output << students[i].toString();
+	}
+	output.close();
 }
 
 /*
@@ -119,7 +123,7 @@ int main() {
 	const int SMC_SIZE = 5;
 	const int SMC_UC_GRADS_SIZE = 2;
 	Student* uc = readStudentsFromFile("sample_uc_students.txt", UC_SIZE);
-	//Student* smc = readStudentsFromFile("sample_smc_grads.txt", SMC_SIZE);
+	Student* smc = readStudentsFromFile("sample_smc_grads.txt", SMC_SIZE);
 
 	/********************************** Use these files for the output you submit *************************/
 	//const int UC_SIZE = 350000;
