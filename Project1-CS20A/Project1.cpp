@@ -8,7 +8,8 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
-#include <ctime>
+//#include <ctime> 
+#include <time.h>
 #include "Student.h"
 using namespace std;
 
@@ -81,14 +82,13 @@ Student* findCommonStudents1(Student group1[], int len1, Student group2[],
 		int len2, int numCommon) {
 	
 	// YOUR CODE HERE
-
+	
 	Student* ucCommonStudent = new Student[numCommon];
 	int k = 0;
 	for (int i = 0; i < len1; i++) {
 		for (int j = 0; j < len2; j++) {
 			
 			if (group1[i] == group2[j]) {
-				
 				ucCommonStudent[k] = group1[i];
 				k++;
 			}
@@ -122,7 +122,19 @@ Student* findCommonStudents2(Student group1[], int len1, Student group2[],
 
   
   // YOUR CODE HERE	
-	return 0;
+	Student* commonStudents = new Student[numCommon];
+	int k = 0;
+	
+	sort(group2, group2 + len2);
+
+	
+	for (int i = 0; i < len1; i++) {
+		if (binary_search(group2, group2 + len2, group1[i]) == true) {
+			commonStudents[k] = group1[i]; 
+			k++;
+		}		
+	}
+	return commonStudents;
 }
 
 
@@ -134,28 +146,30 @@ int main() {
 			 */
 
 	/***** These files provided to help you with initial testing *****/
-	const int UC_SIZE = 10;
+	/*const int UC_SIZE = 10;
 	const int SMC_SIZE = 5;
 	const int SMC_UC_GRADS_SIZE = 2;
 	Student* uc = readStudentsFromFile("sample_uc_students.txt", UC_SIZE);
 	Student* smc = readStudentsFromFile("sample_smc_grads.txt", SMC_SIZE);
-
+	*/
 	/********************************** Use these files for the output you submit *************************/
-	//const int UC_SIZE = 350000;
-	//const int SMC_SIZE = 75000;
-	//const int SMC_UC_GRADS_SIZE = 25000;
-	//Student* uc = readStudentsFromFile("uc_students.txt", UC_SIZE);
-	//Student* smc = readStudentsFromFile("smc_grads.txt", SMC_SIZE);
+	const int UC_SIZE = 350000;
+	const int SMC_SIZE = 75000;
+	const int SMC_UC_GRADS_SIZE = 25000;
+	Student* uc = readStudentsFromFile("uc_students.txt", UC_SIZE);
+	Student* smc = readStudentsFromFile("smc_grads.txt", SMC_SIZE);
 
 	// Rough timing
-	clock_t start, end;
+	//clock_t start, end;
+	time_t start, end;
 
-	start = clock();
+	time(&start);
 
 	Student* common1 = findCommonStudents1(uc, UC_SIZE, smc, SMC_SIZE,
 			SMC_UC_GRADS_SIZE);
-	end = clock();
-	cout << "Using linear search it took " << difftime(end, start) / CLOCKS_PER_SEC << " seconds."
+	time(&end);
+	
+	cout << "Using linear search it took " << difftime(end, start) << " seconds."
 			<< endl;
 
 	 // library sort function to sort an array: sort(arr, arr+size)
@@ -163,11 +177,11 @@ int main() {
 	 
 	sort(common1, common1 + SMC_UC_GRADS_SIZE);
 	writeStudentsToFile(common1, SMC_UC_GRADS_SIZE, "smc_grads_at_uc_1.txt");
-/*
-	//time(&start);
+
+	time(&start);
 	Student* common2 = findCommonStudents2(uc, UC_SIZE, smc, SMC_SIZE,
 			SMC_UC_GRADS_SIZE);
-	//time(&end);
+	time(&end);
 	cout << "Using binary search it took " << difftime(end, start)
 			<< " seconds." << endl;
 
@@ -178,6 +192,6 @@ int main() {
 	delete[] uc;
 	delete[] common1;
 	delete[] common2;
-*/	return 0;
+	return 0;
 
 }
