@@ -24,9 +24,6 @@
   <ItemGroup>
     <Text Include="..\txtFiles\sample_smc_grads.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\headerFiles\Student.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{85B2E95D-24DD-4D12-8AA7-F52718180664}</ProjectGuid>
