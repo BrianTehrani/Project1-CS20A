@@ -26,8 +26,8 @@
     <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="sample_smc_grads.txt" />
-    <Text Include="sample_uc_students.txt" />
+    <Text Include="smc_grads.txt" />
+    <Text Include="uc_students.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

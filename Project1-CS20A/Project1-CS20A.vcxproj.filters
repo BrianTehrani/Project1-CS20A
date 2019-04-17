@@ -28,10 +28,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="sample_smc_grads.txt">
+    <Text Include="smc_grads.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="sample_uc_students.txt">
+    <Text Include="uc_students.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
